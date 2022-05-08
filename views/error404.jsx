@@ -1,14 +1,14 @@
 const React = require('react')
 const Def = require('./default')
 
-function home() {
+function error404() {
 	return (
 		<Def>
 			<main>
-				<h1>Home Page</h1>
+				<h1>404: Page not found</h1>
 			</main>
 		</Def>
 	)
 }
 
-module.exports = home
+module.exports = error404
