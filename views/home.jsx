@@ -1,13 +1,16 @@
 const React = require('react')
-const Def = require('./default')
+const Default = require('./default')
 
 function home() {
 	return (
-		<Def>
+		<Default>
 			<main>
 				<h1>Home Page</h1>
+				<a href="/places">
+					<button className='btn-primary'>Places Page</button>
+				</a>
 			</main>
-		</Def>
+		</Default>
 	)
 }
 

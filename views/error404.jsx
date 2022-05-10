@@ -1,13 +1,13 @@
 const React = require('react')
-const Def = require('./default')
+const Default = require('./default')
 
 function error404() {
 	return (
-		<Def>
+		<Default>
 			<main>
 				<h1>404: Page not found</h1>
 			</main>
-		</Def>
+		</Default>
 	)
 }
 

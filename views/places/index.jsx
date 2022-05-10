@@ -1,5 +1,4 @@
 const React = require('react')
-const Def = require('../default')
 
 function index(data) {
 	// format data
