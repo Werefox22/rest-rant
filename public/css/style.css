@@ -2,3 +2,9 @@ body {
 	background-color: floralwhite;
 	padding: 2rem;
 }
+
+img {
+	width: 50%;
+	margin: auto;
+	display: block;
+}
