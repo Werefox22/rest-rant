@@ -10,3 +10,11 @@ img {
 	border: hidden;
 	border-radius: 5px;
 }
+
+.credit {
+	color: gray;
+}
+
+.credit a {
+	color: lightskyblue;
+}
