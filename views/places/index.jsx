@@ -3,7 +3,7 @@ const Default = require('../default')
 
 function index(data) {
 	// format data
-	let placesFormatted = data.Places.map((place) => {
+	let placesFormatted = data.places.map((place) => {
 		return (
 			<div className='col-sm-6' key={index}>
 				<h2>{place.name}</h2>
