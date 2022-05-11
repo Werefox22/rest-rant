@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
 	res.render('places/index', {Places})
 })
 
+router.post('/', (req, res) => {
+	res.send('places POST route')
+})
+
 // /places/new
 router.get('/new', (req, res) => {
 	res.render('places/new')

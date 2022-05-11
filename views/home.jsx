@@ -21,6 +21,3 @@ function home() {
 }
 
 module.exports = home
-// Photo by Tyler Nix on Unsplash
-// tyler: https://unsplash.com/@nixcreative?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
-// unsplash: https://unsplash.com/s/photos/coffee-cup?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
