@@ -9,6 +9,9 @@ function def(html) {
 				<link rel="stylesheet" href="css/style.css" />
 			</head>
 			<body>
+				<header>
+					<a href="/"><h1>REST-Rant</h1></a>
+				</header>
 				{html.children}
 			</body>
 		</html>

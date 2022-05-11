@@ -5,7 +5,6 @@ function home() {
 	return (
 		<Default>
 			<main>
-				<h1>REST-Rant</h1>
 				<div>
 					<img src="/images/coffee.jpg" alt="Coffee on a table" />
 					<div className='credit'>

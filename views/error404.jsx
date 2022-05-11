@@ -5,7 +5,7 @@ function error404() {
 	return (
 		<Default>
 			<main>
-				<h1>404: Page not found</h1>
+				<h2>404: Page not found</h2>
 				<p>Whoops, sorry! We couldn't find that page!</p>
 				<div>
 					<img src="images/blanketcat.jpg" alt="A cat hiding under a blanket" />

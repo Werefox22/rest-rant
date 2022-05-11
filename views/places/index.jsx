@@ -18,14 +18,12 @@ function index(data) {
 	return (
 		<Default>
 			<main>
-				<h1>Places to Rant or Rave About</h1>
+				<h2>Places to Rant or Rave About</h2>
 				<div className='row'>
 					{placesFormatted}
 				</div>
 				<hr />
-				<a href="/"><button className='btn-primary'>Home</button></a>
 				<a href="/places/new"><button className='btn-primary'>New Place</button></a>
-
 			</main>
 		</Default>
 	)
