@@ -11,6 +11,13 @@ function def(html) {
 			<body>
 				<header>
 					<a href="/"><h1>REST-Rant</h1></a>
+					<nav>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/places">Places</a></li>
+							<li><a href="/places/new">Add Place</a></li>
+						</ul>
+					</nav>
 				</header>
 				{html.children}
 			</body>

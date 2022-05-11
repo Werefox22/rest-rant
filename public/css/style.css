@@ -1,6 +1,10 @@
 body {
 	background-color: floralwhite;
-	padding: 2rem;
+}
+
+main {
+	margin: 0 20px;
+	background-color: white;
 }
 
 img {
@@ -17,4 +21,30 @@ img {
 
 .credit a {
 	color: lightskyblue;
+}
+
+/* Navbar */
+nav {
+	background-color: cornflowerblue;
+	padding: 10px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+nav li {
+	display: inline;
+	margin-right: 25px;
+}
+
+nav a {
+	color: white;
+	font-size: 1.5em;
+}
+
+nav a:hover {
+	color: pink;
+	text-decoration: none;
 }
