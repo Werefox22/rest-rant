@@ -23,14 +23,14 @@ router.post('/', (req, res) => {
 	res.redirect('/places')
 })
 
-// /places/new
+// new
 router.get('/new', (req, res) => {
 	res.render('places/new')
 })
 
-// places/:id
+// show
 router.get('/:id', (req, res) => {
-	res.send(places[req.params.id])
+	res.render('places/show')
 })
 
 module.exports = router
