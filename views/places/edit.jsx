@@ -7,46 +7,50 @@ function edit(data) {
 			<main>
 				<h2>Edit a Place</h2>
 				<form action={`/places/${data.id}?_method=PUT`} method='POST'>
-					<div className='form-group'>
-						<label htmlFor='name'>Place Name</label>
-						<input 
-							className='form-control' 
-							id='name' 
-							name='name' 
-							type="text" 
-							required
-							defaultValue={data.place.name}
-						/>
+					<div className='row'>
+						<div className='form-group col-sm-6'>
+							<label htmlFor='name'>Place Name</label>
+							<input 
+								className='form-control' 
+								id='name' 
+								name='name' 
+								type="text" 
+								required
+								defaultValue={data.place.name}
+							/>
+						</div>
+						<div className='form-group col-sm-6'>
+							<label htmlFor='pic'>Place Picture</label>
+							<input 
+								className='form-control' 
+								id='pic' 
+								name='pic' 
+								type="url"
+								defaultValue={data.place.pic}
+							/>
+						</div>
 					</div>
-					<div className='form-group'>
-						<label htmlFor='pic'>Place Picture</label>
-						<input 
-							className='form-control' 
-							id='pic' 
-							name='pic' 
-							type="url"
-							defaultValue={data.place.pic}
-						/>
-					</div>
-					<div className='form-group'>
-						<label htmlFor="city">City</label>
-						<input 
-							className='form-control' 
-							id='city' 
-							name='city' 
-							type="text"
-							defaultValue={data.place.city}
-						/>
-					</div>
-					<div className='form-group'>
-						<label htmlFor="state">State</label>
-						<input 
-							className='form-control' 
-							id="state" 
-							name='state' 
-							type="text"
-							defaultValue={data.place.state}
-						/>
+					<div className='row'>
+						<div className='form-group col-sm-6'>
+							<label htmlFor="city">City</label>
+							<input 
+								className='form-control' 
+								id='city' 
+								name='city' 
+								type="text"
+								defaultValue={data.place.city}
+							/>
+						</div>
+						<div className='form-group col-sm-6'>
+							<label htmlFor="state">State</label>
+							<input 
+								className='form-control' 
+								id="state" 
+								name='state' 
+								type="text"
+								defaultValue={data.place.state}
+							/>
+						</div>
 					</div>
 					<div className='form-group'>
 						<label htmlFor="cuisines">Cuisines</label>

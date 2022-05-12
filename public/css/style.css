@@ -1,16 +1,33 @@
+/* CSS HEX */
+:root {
+	--maximum-purple: #643a71ff;
+	--amethyst: #8b5fbfff;
+	--french-mauve: #d183c9ff;
+	--shimmering-blush: #e3879eff;
+	--pink: #fec0ceff;
+}
+
 /* General */
 body {
-	background-color: floralwhite;
+	background-color: var(--shimmering-blush)
 }
 
 main {
 	margin: 0 20px;
 	padding: 10px;
-	background-color: white;
+	background-color: var(--pink);
 }
 
 header {
 	padding: 0.5em;
+}
+
+input {
+	margin: 0.5em 0;
+}
+
+a {
+	color: var(--maximum-purple);
 }
 
 /* Images */
@@ -22,13 +39,18 @@ img {
 	border-radius: 5px;
 }
 
-.credit {
+/* .credit {
 	color: gray;
+} */
+
+.credit a, .credit a:visited {
+	color: var(--maximum-purple);
 }
 
-.credit a {
-	color: lightskyblue;
+.credit a:hover, .credit a:visited:hover {
+	color: var(--french-mauve);
 }
+
 
 /* Buttons */
 .buttons * {
@@ -38,7 +60,7 @@ img {
 
 /* Navbar */
 nav {
-	background-color: cornflowerblue;
+	background-color: var(--maximum-purple);
 	padding: 10px;
 }
 
