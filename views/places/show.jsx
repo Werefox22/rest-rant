@@ -20,7 +20,7 @@ function show(data) {
 							</form>
 						</div>
 					</div>
-
+					
 					<div className='col-sm-6'>
 						<h2>Rating</h2>
 						<p>Not yet rated</p>

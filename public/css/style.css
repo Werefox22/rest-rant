@@ -31,8 +31,9 @@ img {
 }
 
 /* Buttons */
-.button * {
+.buttons * {
 	display: inline;
+	margin: 0.5em;
 }
 
 /* Navbar */
