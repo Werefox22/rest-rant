@@ -1,3 +1,4 @@
+/* General */
 body {
 	background-color: floralwhite;
 }
@@ -12,6 +13,7 @@ header {
 	padding: 0.5em;
 }
 
+/* Images */
 img {
 	width: 50%;
 	margin: auto;
@@ -26,6 +28,11 @@ img {
 
 .credit a {
 	color: lightskyblue;
+}
+
+/* Buttons */
+.button * {
+	display: inline;
 }
 
 /* Navbar */
