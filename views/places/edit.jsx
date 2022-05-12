@@ -1,12 +1,12 @@
 const React = require('react')
 const Default = require('../default')
 
-function new_form() {
+function edit(data) {
 	return (
 		<Default>
 			<main>
-				<h2>Add a New Place</h2>
-				<form method='POST' action='/places'>
+				<h2>Edit a Place</h2>
+				<form action={`/places/${data.id}?_method=PUT`} method='POST'>
 					<div className='form-group'>
 						<label htmlFor='name'>Place Name</label>
 						<input 
@@ -14,7 +14,8 @@ function new_form() {
 							id='name' 
 							name='name' 
 							type="text" 
-							required 
+							required
+							defaultValue={data.place.name}
 						/>
 					</div>
 					<div className='form-group'>
@@ -23,7 +24,8 @@ function new_form() {
 							className='form-control' 
 							id='pic' 
 							name='pic' 
-							type="url" 
+							type="url"
+							defaultValue={data.place.pic}
 						/>
 					</div>
 					<div className='form-group'>
@@ -33,6 +35,7 @@ function new_form() {
 							id='city' 
 							name='city' 
 							type="text"
+							defaultValue={data.place.city}
 						/>
 					</div>
 					<div className='form-group'>
@@ -41,7 +44,8 @@ function new_form() {
 							className='form-control' 
 							id="state" 
 							name='state' 
-							type="text" 
+							type="text"
+							defaultValue={data.place.state}
 						/>
 					</div>
 					<div className='form-group'>
@@ -51,13 +55,14 @@ function new_form() {
 							id='cuisines' 
 							name='cuisines' 
 							type="text"
-							 required
+							required
+							defaultValue={data.place.cuisines}
 						/>
 					</div>
 					<input 
 						className='btn btn-primary' 
 						type="submit" 
-						value='Add Place'
+						value='Update Place'
 					/>
 				</form>
 				<hr />
@@ -67,4 +72,4 @@ function new_form() {
 	)
 }
 
-module.exports = new_form
+module.exports = edit
