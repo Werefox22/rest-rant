@@ -38,4 +38,15 @@ router.get('/:id', (req, res) => {
 	}
 })
 
+// delete
+router.delete('/:id', (req, res) => {
+	let id = Number(req.params.id)
+	if (isNaN(id) || !places[id]) {
+		res.render('error404')
+	} else {
+		places.splice(id, 1)
+		res.redirect('/places')
+	}
+})
+
 module.exports = router
