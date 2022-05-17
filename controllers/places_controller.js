@@ -7,7 +7,7 @@ const db = require('../models')
 router.get('/', (req, res) => {
 	db.Place.find()
 	.then(places => {
-		res.render('/places/index', { places })
+		res.render('places/index', { places })
 	})
 	.catch(er => {
 		console.log(err)
@@ -17,12 +17,19 @@ router.get('/', (req, res) => {
 
 // post 
 router.post('/', (req, res) => {
-	res.send('POST /places stub')
+	db.Place.create(req.body)
+	.then(() => {
+		res.redirect('/places')
+	})
+	.catch(err => {
+		console.log('err', err)
+		res.render('error404')
+	})
 })
 
 // new
 router.get('/new', (req, res) => {
-	res.send('GET /places/new stub')
+	res.render('places/new')
 })
 
 // edit
