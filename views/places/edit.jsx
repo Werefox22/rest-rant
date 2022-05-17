@@ -6,7 +6,7 @@ function edit(data) {
 		<Default>
 			<main>
 				<h2>Edit a Place</h2>
-				<form action={`/places/${data.id}?_method=PUT`} method='POST'>
+				<form action={`/places/${data.place.id}?_method=PUT`} method='POST'>
 					<div className='row'>
 						<div className='form-group col-sm-6'>
 							<label htmlFor='name'>Place Name</label>

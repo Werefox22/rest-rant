@@ -40,7 +40,14 @@ router.get('/new', (req, res) => {
 
 // edit
 router.get('/:id/edit', (req, res) => {
-	res.send('GET /places/:id/edit stub')
+	db.Place.findById(req.params.id)
+	.then(place => {
+		res.render('places/edit', { place })
+	})
+	.catch(err => {
+		console.log('err', err)
+		res.render('error404')
+	})
 })
 
 // show
@@ -57,7 +64,20 @@ router.get('/:id', (req, res) => {
 
 // update
 router.put('/:id', (req, res) => {
-	res.send("PUT /places/:id stub")
+	// validate image
+	if (!req.body.pic || !req.body.pic.startsWith('https') || req.body.pic.startsWith('http')) {
+		// default image is handled by the schema
+		req.body.pic = undefined
+	}
+
+	db.Place.findByIdAndUpdate(req.params.id, req.body)
+	.then(() => {
+		res.redirect('/places')
+	})
+	.catch(err => {
+		console.log('err', err)
+		res.render('error404')
+	})
 })
 
 // delete
