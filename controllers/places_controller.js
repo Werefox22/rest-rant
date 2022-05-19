@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 // post 
 router.post('/', (req, res) => {
 	// validate image
-	if (!req.body.pic || !req.body.pic.startsWith('https') || req.body.pic.startsWith('http')) {
+	if (!req.body.pic || !req.body.pic.startsWith('https') || !req.body.pic.startsWith('http')) {
 		// default image is handled by the schema
 		req.body.pic = undefined
 	}

@@ -51,12 +51,18 @@ function new_form() {
 							id='cuisines' 
 							name='cuisines' 
 							type="text"
-							 required
+							required
 						/>
 					</div>
 					<div className='form-group'>
 						<label htmlFor="founded">Year Founded</label>
-						<input className='form-control' id='founded' name='founded' type="text" />
+						<input 
+							className='form-control' 
+							id='founded' 
+							name='founded' 
+							type="number"
+							defaultValue={new Date().getFullYear()}
+						/>
 					</div>
 					<input 
 						className='btn btn-primary' 
