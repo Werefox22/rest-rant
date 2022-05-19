@@ -10,7 +10,10 @@ function show(data) {
 					<div className='col-sm-6'>
 						<h2>{data.place.name}</h2>
 						<img src={data.place.pic} alt={data.place.name} />
-
+						
+						<h4>Location</h4>
+						<p>{`${data.place.city}, ${data.place.state}`}</p>
+						
 						<div className='buttons'>
 							<a href={`/places/${data.place.id}/edit`} className='btn btn-warning'>Edit</a>
 							<form method='POST' action={`/places/${data.place.id}?_method=DELETE`}>
@@ -22,12 +25,14 @@ function show(data) {
 					</div>
 					
 					<div className='col-sm-6'>
-						<h2>Rating</h2>
+						<h2>Description</h2>
+						<p>{data.place.showEstablished()}</p>
+
+						<h4>Rating</h4>
 						<p>Not yet rated</p>
+
 						<h4>Cuisines</h4> 
 						<p>{data.place.cuisines}</p>
-						<h4>Location</h4>
-						<p>{`${data.place.city}, ${data.place.state}`}</p>
 					</div>
 				</div>
 
