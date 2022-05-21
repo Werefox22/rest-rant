@@ -15,7 +15,43 @@ router.get('/', (req, res) => {
 	})
 })
 
-// post 
+// post comment
+router.post('/:id/comment', (req, res) => {
+	// switch checkbox state from 'on' to true/false
+	if (req.body.rant === 'on') {
+		req.body.rant = true
+	} else {
+		req.body.rant = false
+	}
+
+	if (req.body.author === '') {
+		req.body.author = undefined
+	}
+
+	db.Place.findById(req.params.id)
+		// create comment
+		.then(foundPlace => {
+			db.Comment.create(req.body)
+				.then(createdComment => {
+					// push comment
+					foundPlace.comments.push(createdComment)
+					foundPlace.save()
+					.then(() => {
+						res.redirect(`/places/${req.params.id}`)
+					})
+				})
+				.catch(err => {
+					console.log('err', err)
+					res.render('error404')
+				})		
+		})
+		.catch(err => {
+			console.log('err', err)
+			res.render('error404')
+		})
+	})
+
+// post place
 router.post('/', (req, res) => {
 	// validate image
 	if (!req.body.pic || !req.body.pic.startsWith('https') || !req.body.pic.startsWith('http')) {
@@ -32,6 +68,7 @@ router.post('/', (req, res) => {
 		res.render('error404')
 	})
 })
+
 
 // new
 router.get('/new', (req, res) => {

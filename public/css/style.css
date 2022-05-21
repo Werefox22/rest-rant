@@ -48,13 +48,22 @@ img {
 }
 
 /* Comments */
-.comment {
+.comment, .comment-form {
+	border: 1px solid var(--maximum-purple);
+	border-radius: 10px;
+
+	margin: 0.5em 0;
+	padding: 1em;
+}
+
+/* .comment-form {
 	border: 1px solid var(--maximum-purple);
 	border-radius: 10px;
 	
 	margin: 0.5em 0;
-	padding: 0.25em;
-}
+	padding: 0.5em;
+} */
+
 
 /* Buttons */
 .buttons * {

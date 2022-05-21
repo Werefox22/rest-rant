@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 
 // schema
 const commentSchema = new mongoose.Schema({
-	author: {
-		type: String, 
-		default: 'Anonymous'
+	content: {
+		type: String,
+		default: ''
 	},
 	rant: {
 		type: Boolean,
@@ -14,9 +14,9 @@ const commentSchema = new mongoose.Schema({
 		type: Number,
 		required: true
 	},
-	content: {
-		type: String,
-		default: ''
+	author: {
+		type: String, 
+		default: 'Anonymous'
 	}
 })
 

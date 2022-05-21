@@ -14,7 +14,7 @@ function show(data) {
 			return (
 				<div className='comment'>
 					<h3 className='rant'>{c.rant ? 'Rant! 😡' : 'Rave! 😍'}</h3>
-					<h4>{c.content}</h4>
+					<h4>"{c.content}"</h4>
 					<h5>
 						<strong>- {c.author}</strong>
 					</h5>
@@ -57,11 +57,78 @@ function show(data) {
 						<p>{data.place.cuisines}</p>
 					</div>
 				</div>
+				<hr />
 
 				{/* COMMENTS */}
-				<hr />
-				<h3>Comments</h3>
-				{comments}
+				<div className='row'>
+					{/* Comments */}
+					<div className='col-6'>
+						<h3>Comments</h3>
+						{comments}
+					</div>
+
+					{/* Form */}
+					<div className='col-md-6'>
+						<h3>Submit Comment</h3>
+						<div className='comment-form'>
+
+							<form method='POST' action={`/places/${data.place.id}/comment`}>
+								<div className='form-group'>
+									<label htmlFor="content">Comment</label>
+									<textarea
+										id='content'
+										name='content'
+										rows={10}
+										placeholder='Your rant here...'
+										className='form-control'
+									/>
+								</div>
+
+								<div className='row'>
+									<div className='form-group col-1'>
+										<label htmlFor="rant">Rant?</label>
+										<input
+											id='rant'
+											name='rant'
+											type='checkbox'
+											className='form-check'
+										/>
+									</div>
+									<div className='form-group col-2'>
+										<label htmlFor="stars">Rating (0-5)</label>
+										<input
+											id='stars'
+											name='stars'
+											type='number'
+											min={0}
+											max={5}
+											step={0.5}
+											className='form-control'
+											required
+										/>
+									</div>
+									<div className='form-group col-7'>
+										<label htmlFor="author">Author</label>
+										<input
+											id='author'
+											name='author'
+											type='text'
+											placeholder='Anonymous'
+											className='form-control'
+										/>
+									</div>
+									<div className='form-group col-2'>
+										<input 
+											className='btn btn-primary' 
+											type="submit" 
+											value='Post Comment'
+										/>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 			</main>
 		</Default>
 	)
