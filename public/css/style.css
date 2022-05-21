@@ -39,10 +39,6 @@ img {
 	border-radius: 5px;
 }
 
-/* .credit {
-	color: gray;
-} */
-
 .credit a, .credit a:visited {
 	color: var(--maximum-purple);
 }
@@ -51,6 +47,14 @@ img {
 	color: var(--french-mauve);
 }
 
+/* Comments */
+.comment {
+	border: 1px solid var(--maximum-purple);
+	border-radius: 10px;
+	
+	margin: 0.5em 0;
+	padding: 0.25em;
+}
 
 /* Buttons */
 .buttons * {
