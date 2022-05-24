@@ -110,7 +110,7 @@ router.put('/:id', (req, res) => {
 
 	db.Place.findByIdAndUpdate(req.params.id, req.body)
 	.then(() => {
-		res.redirect('/places')
+		res.redirect(`/places/${req.params.id}`)
 	})
 	.catch(err => {
 		console.log('err', err)
@@ -118,7 +118,15 @@ router.put('/:id', (req, res) => {
 	})
 })
 
-// delete
+// delete comment
+router.delete('/:pID/comment/:cID', async (req, res) => {
+	let foundPlace = await db.Place.findById(req.params.pID)
+	let foundComment = await db.Comment.findByIdAndDelete(req.params.cID)
+	await foundPlace.save()
+	res.redirect(`/places/${req.params.pID}`)
+})
+
+// delete place
 router.delete('/:id', (req, res) => {
 
 	db.Place.findByIdAndDelete(req.params.id)

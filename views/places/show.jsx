@@ -21,13 +21,23 @@ function show(data) {
 		// Add the comments to the page
 		comments = data.place.comments.map(c => {
 			return (
-				<div className='comment' key={c.id}>
-					<h3 className='rant'>{c.rant ? 'Rant! 😡' : 'Rave! 😍'}</h3>
-					<h4>"{c.content}"</h4>
-					<h5>
-						<strong>- {c.author}</strong>
-					</h5>
-					<h4>Rating: {c.stars}/5</h4>
+				<div className='comment row' key={c.id}>
+					<div className='col-9'>
+						<h3 className='rant'>{c.rant ? 'Rant! 😡' : 'Rave! 😍'}</h3>
+						<h4>"{c.content}"</h4>
+						<h5>
+							<strong>- {c.author}</strong>
+						</h5>
+						<h4>Rating: {c.stars}/5</h4>
+					</div>
+					{/* Delete button */}
+					<div className='col-3'>
+						<form method='POST' action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`}>
+							<button type='submit' className='btn btn-danger'>
+								Delete
+							</button>
+						</form>
+					</div>
 				</div>
 			)
 		})
