@@ -9,10 +9,19 @@ function show(data) {
 		</h3>
 	)
 
+	// Rating
+	let rating = (
+		<p className='inactive'>
+			No ratings yet!
+		</p>
+	)	
+
+	// If there are comments
 	if (data.place.comments.length) {
+		// Add the comments to the page
 		comments = data.place.comments.map(c => {
 			return (
-				<div className='comment'>
+				<div className='comment' key={c.id}>
 					<h3 className='rant'>{c.rant ? 'Rant! 😡' : 'Rave! 😍'}</h3>
 					<h4>"{c.content}"</h4>
 					<h5>
@@ -22,8 +31,20 @@ function show(data) {
 				</div>
 			)
 		})
-	}
 
+		// Get the average rating
+		let sumRatings = data.place.comments.reduce((tot, c) => {
+			return tot + c.stars
+		}, 0)
+		let avgRating = sumRatings / data.place.comments.length
+
+		rating = (
+			<p>
+				{Math.round(avgRating)} stars
+			</p>
+		)
+	}
+	
 	return (
 		<Default>
 			<main>
@@ -51,7 +72,7 @@ function show(data) {
 						<p>{data.place.showEstablished()}</p>
 
 						<h4>Rating</h4>
-						<p>Not yet rated</p>
+						{rating}
 
 						<h4>Cuisines</h4> 
 						<p>{data.place.cuisines}</p>
@@ -85,7 +106,7 @@ function show(data) {
 								</div>
 
 								<div className='row'>
-									<div className='form-group col-1'>
+									<div className='form-group col-2'>
 										<label htmlFor="rant">Rant?</label>
 										<input
 											id='rant'
@@ -107,7 +128,7 @@ function show(data) {
 											required
 										/>
 									</div>
-									<div className='form-group col-7'>
+									<div className='form-group col-4'>
 										<label htmlFor="author">Author</label>
 										<input
 											id='author'
