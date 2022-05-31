@@ -1,7 +1,7 @@
 const db = require('../models')
 
 // fake names
-let nouns = [ "Tony's", "Bobs's", "The Red", "Royal", "Best", "Famous" ]
+let nouns = [ "Tony's", "Bob's", "The Red", "Royal", "Best", "Famous" ]
 let rests = [ "Place", "Shack", "Grill", "Breakfast", "House", "Ovens", "Kitchen" ]
 let cities = [ "Seattle", "Charlotte", "Raleigh", "Durham", "Atlanta", "Pheonix", "Birmingham", "Detroit" ]
 let states = [ "WA", "AZ", "AL", "MI", "NC", "SC", "GA" ]

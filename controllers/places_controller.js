@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 	.then(places => {
 		res.render('places/index', { places })
 	})
-	.catch(er => {
+	.catch(err => {
 		console.log(err)
 		res.render('error404')
 	})
